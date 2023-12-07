@@ -31,8 +31,9 @@ def main_func():
                         if value > round_minimums['blue']:
                             round_minimums['blue'] = value
             # Getting game power and adding it to powers
-            #print(index, ': ', round_minimums)
-            total += round_minimums['red'] * round_minimums['green'] * round_minimums['blue']
+            # print(index, ': ', round_minimums)
+            total += round_minimums['red'] * \
+                round_minimums['green'] * round_minimums['blue']
         print(total)
 
 

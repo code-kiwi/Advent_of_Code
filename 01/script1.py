@@ -1,7 +1,7 @@
 def main_func():
     with open('./01_temp1.txt', 'r') as file:
         sum = 0
-        lines = file.readlines();
+        lines = file.readlines()
         for line in lines:
             num = 0
             for char in line[::1]:
@@ -14,6 +14,7 @@ def main_func():
                     break
             sum += num
         print(sum)
+
 
 if __name__ == "__main__":
     main_func()
