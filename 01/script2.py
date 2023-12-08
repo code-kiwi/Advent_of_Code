@@ -1,7 +1,17 @@
 def main_func():
-    digits = ['zero', 'one', 'two', 'three', 'four',
-              'five', 'six', 'seven', 'eight', 'nine']
-    with open('./01_temp2.txt', 'r') as file:
+    digits = [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ]
+    with open("./01_temp2.txt", "r") as file:
         sum = 0
         lines = file.readlines()
         for line in lines:
@@ -12,7 +22,7 @@ def main_func():
             # Getting first digit
             for i in range(line_len):
                 subline = line[i:line_len]
-                if subline[0] in '0123456789':
+                if subline[0] in "0123456789":
                     num += 10 * int(subline[0])
                     break
                 for index, digit in enumerate(digits):
@@ -27,7 +37,7 @@ def main_func():
             # Getting last digit
             for i in range(line_len - 1, -1, -1):
                 subline = line[i:line_len]
-                if subline[0] in '0123456789':
+                if subline[0] in "0123456789":
                     num += int(subline[0])
                     break
                 for index, digit in enumerate(digits):

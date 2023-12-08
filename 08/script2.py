@@ -46,6 +46,7 @@ def main_func():
                 currents[new_index] = directions[currents[new_index]][next_direction]
                 count += 1
             results[new_index] = count
+        # Then I used the LCM of the result elements
         print(results)
 
 
