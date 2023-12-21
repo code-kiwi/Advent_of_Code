@@ -74,6 +74,12 @@ def main_func():
             }
             for line_data in (line.split() for line in file.readlines())
         ]
+        for line_data in data:
+            hex = line_data["col"]
+            dir = "R" if hex[-1] == "0" else ("D" if hex[-1] == "1" else ("L" if hex[-1] == "2" else "U"))
+            nb = int(hex[1:-1], 16)
+            line_data["dir"] = dir
+            line_data["nb"] = nb
 
         # Building the grid and filling the shape
         grid = build_grid(data)
