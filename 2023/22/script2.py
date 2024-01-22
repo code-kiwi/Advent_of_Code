@@ -43,30 +43,6 @@ def main_func():
             ):
                 valid.add(index)
 
-        """
-        total = 0
-        for index in range(len(bricks)):
-            todo = []
-            fallen = set()
-            if index in valid:
-                continue
-            for j in lower_supports_upper[index]:
-                todo.append(j)
-                fallen.add(j)
-            while todo:
-                i = todo.pop()
-                if (i in valid):
-                    continue
-                for j in lower_supports_upper[i]:
-                    if j not in fallen:
-                        todo.append(j)
-                        fallen.add(j)
-            total += len(fallen)
-
-        print(total)
-       
-        
-        """
         total = 0
         for i in range(len(bricks)):
             if i in valid:
@@ -77,14 +53,13 @@ def main_func():
                 if len(upper_supported_by_lower[j]) == 1
             )
             fallen = set(q)
-            fallen.add(i)
             while q:
                 j = q.popleft()
                 for k in lower_supports_upper[j]:
                     if k not in fallen and upper_supported_by_lower[k] <= fallen:
                         q.append(k)
                         fallen.add(k)
-            total += len(fallen) - 1
+            total += len(fallen)
         print(total)
 
 
